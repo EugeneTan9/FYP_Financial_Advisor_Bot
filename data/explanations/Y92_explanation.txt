@@ -1,0 +1,55 @@
+============================================================
+STOCK RECOMMENDATION: Y92.SI (Y92.SI)
+============================================================
+Sector: Consumer Defensive
+Current Price: $0.50
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Earnings: EPS of $0.04
+  • Strong Price Momentum: Up 23.9% in past 6 months
+
+Quality Factors:
+  • Good ROE: 14.0%
+  • Large Cap: $11.4B market cap (established company)
+
+Risk Profile:
+  • Low Volatility: 21.6% annualized (stable price movement)
+  • Maximum Drawdown: -8.4% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • MODERATE debt level (D/E = 108.7%)
+  • Sector Risk: Consumer staples offer stability but may face margin pressure from inflation and competition.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #31 (Score: 52.27/100)
+  ML Model: Rank #9 (Probability: 52.0%)
+
+  ML Model recommends (Factor Model does not):
+    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - May capture non-linear relationships not in factor formula
+
+  Key Feature Values (ML Model):
+    - ROE: 14.01%
+    - Avg_Volume_3M: 29150942.06
+    - SMA_50: 49.44%
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

@@ -1,0 +1,57 @@
+============================================================
+STOCK RECOMMENDATION: BS6.SI (BS6.SI)
+============================================================
+Sector: Industrials
+Current Price: $2.81
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Earnings: EPS of $0.36
+  • Strong Price Momentum: Up 21.7% in past 6 months
+
+Quality Factors:
+  • Excellent ROE: 30.7% (strong capital efficiency)
+  • High Profit Margin: 29.4%
+  • Low Debt: D/E ratio of 21.7% (conservative financing)
+  • Large Cap: $16.8B market cap (established company)
+
+Risk Profile:
+  • Moderate Volatility: 37.6% annualized
+  • Maximum Drawdown: 0.0% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 21.7%) - conservative balance sheet
+  • Sector Risk: Industrial stocks are cyclical and sensitive to economic slowdowns and supply chain disruptions.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #8 (Score: 62.67/100)
+  ML Model: Rank #1 (Probability: 71.8%)
+
+  Both models agree on this recommendation:
+    - Factor Model: Strong fundamentals (ROE, growth, low risk)
+    - ML Model: Identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+
+  Key Feature Values (ML Model):
+    - ROE: 30.67%
+    - Avg_Volume_3M: 29535866.33
+    - SMA_50: 2.51
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟡 MEDIUM CONFIDENCE
+  Both models rank this stock in their Top 10.
+  Good agreement, but not the strongest picks from either model.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

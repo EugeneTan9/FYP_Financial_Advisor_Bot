@@ -1,0 +1,58 @@
+============================================================
+STOCK RECOMMENDATION: AIY.SI (AIY.SI)
+============================================================
+Sector: Technology
+Current Price: $7.31
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Strong Revenue Growth: 45.7% YoY
+  • Positive Earnings: EPS of $0.32
+  • Positive Momentum: Up 0.6% in past 6 months
+
+Quality Factors:
+  • Excellent ROE: 28.0% (strong capital efficiency)
+  • Healthy Profit Margin: 19.4%
+  • Moderate Debt: D/E ratio of 41.9%
+  • Mid Cap: $2.8B market cap
+
+Risk Profile:
+  • Moderate Volatility: 25.5% annualized
+  • Maximum Drawdown: -10.8% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 41.9%) - conservative balance sheet
+  • Sector Risk: Technology stocks face valuation risks, rapid obsolescence, and increasing regulatory scrutiny.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #6 (Score: 63.87/100)
+  ML Model: Rank #16 (Probability: 46.5%)
+
+  Factor Model recommends (ML Model does not):
+    - Strong fundamental metrics drive this recommendation
+    - ML model may see different patterns in historical data
+
+  Key Feature Values (ML Model):
+    - ROE: 28.02%
+    - Avg_Volume_3M: 586004.76
+    - SMA_50: 7.38
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Balanced investors
+  (Mix of growth and stability characteristics suits moderate risk tolerance)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

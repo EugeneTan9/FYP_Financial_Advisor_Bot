@@ -1,0 +1,50 @@
+============================================================
+STOCK RECOMMENDATION: U77.SI (U77.SI)
+============================================================
+Sector: Technology
+Current Price: $0.22
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Quality Factors:
+  • Low Debt: D/E ratio of 7.4% (conservative financing)
+
+Risk Profile:
+  • Moderate Volatility: 37.1% annualized
+  • Maximum Drawdown: -27.1% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 7.4%) - conservative balance sheet
+  • Sector Risk: Technology stocks face valuation risks, rapid obsolescence, and increasing regulatory scrutiny.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #51 (Score: 37.92/100)
+  ML Model: Rank #3 (Probability: 62.6%)
+
+  ML Model recommends (Factor Model does not):
+    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - May capture non-linear relationships not in factor formula
+
+  Key Feature Values (ML Model):
+    - ROE: -0.19%
+    - Avg_Volume_3M: 155336.51
+    - SMA_50: 23.01%
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

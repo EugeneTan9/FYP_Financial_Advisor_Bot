@@ -1,0 +1,19 @@
+Ticker,Company_Name,Sector,Confidence,Factor_Rank,ML_Rank,Investor_Suitability
+1D0.SI,1D0.SI,Consumer Cyclical,LOW,26,7,Conservative investors
+9CI.SI,9CI.SI,Real Estate,LOW,45,6,Conservative investors
+AIY.SI,AIY.SI,Technology,LOW,6,16,Balanced investors
+AJBU.SI,AJBU.SI,Real Estate,LOW,3,53,Balanced investors
+BS6.SI,BS6.SI,Industrials,MEDIUM,8,1,Conservative investors
+C09.SI,C09.SI,Real Estate,LOW,42,10,Conservative investors
+C41.SI,C41.SI,Consumer Cyclical,LOW,28,5,Balanced investors
+CMOU.SI,CMOU.SI,Real Estate,LOW,52,4,Balanced investors
+D05.SI,D05.SI,Financial Services,MEDIUM,1,8,Conservative investors
+O39.SI,O39.SI,Financial Services,LOW,4,37,Conservative investors
+OV8.SI,OV8.SI,Consumer Defensive,LOW,7,36,Conservative investors
+P8Z.SI,P8Z.SI,Consumer Defensive,LOW,10,19,Conservative investors
+QC7.SI,QC7.SI,Healthcare,LOW,41,2,Conservative investors
+S68.SI,S68.SI,Financial Services,LOW,2,35,Conservative investors
+U11.SI,U11.SI,Financial Services,LOW,5,33,Conservative investors
+U77.SI,U77.SI,Technology,LOW,51,3,Conservative investors
+Y92.SI,Y92.SI,Consumer Defensive,LOW,31,9,Conservative investors
+Z74.SI,Z74.SI,Communication Services,LOW,9,20,Conservative investors

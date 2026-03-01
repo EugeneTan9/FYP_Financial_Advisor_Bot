@@ -1,0 +1,57 @@
+============================================================
+STOCK RECOMMENDATION: OV8.SI (OV8.SI)
+============================================================
+Sector: Consumer Defensive
+Current Price: $1.60
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Strong Revenue Growth: 14.4% YoY
+  • Positive Earnings: EPS of $0.10
+  • Positive Momentum: Up 13.8% in past 6 months
+
+Quality Factors:
+  • Excellent ROE: 27.1% (strong capital efficiency)
+  • Low Debt: D/E ratio of 18.3% (conservative financing)
+  • Mid Cap: $3.9B market cap
+
+Risk Profile:
+  • Low Volatility: 10.3% annualized (stable price movement)
+  • Maximum Drawdown: -1.2% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 18.3%) - conservative balance sheet
+  • Sector Risk: Consumer staples offer stability but may face margin pressure from inflation and competition.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #7 (Score: 63.26/100)
+  ML Model: Rank #36 (Probability: 36.1%)
+
+  Factor Model recommends (ML Model does not):
+    - Strong fundamental metrics drive this recommendation
+    - ML model may see different patterns in historical data
+
+  Key Feature Values (ML Model):
+    - ROE: 27.09%
+    - Avg_Volume_3M: 1810015.87
+    - SMA_50: 1.58
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

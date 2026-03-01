@@ -1,0 +1,58 @@
+============================================================
+STOCK RECOMMENDATION: AJBU.SI (AJBU.SI)
+============================================================
+Sector: Real Estate
+Current Price: $2.09
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Strong Revenue Growth: 50.3% YoY
+  • Positive Earnings: EPS of $0.19
+  • Strong Price Momentum: Up 25.1% in past 6 months
+
+Quality Factors:
+  • Good ROE: 11.4%
+  • High Profit Margin: 96.9%
+  • Moderate Debt: D/E ratio of 56.5%
+  • Mid Cap: $5.6B market cap
+
+Risk Profile:
+  • Low Volatility: 23.2% annualized (stable price movement)
+  • Maximum Drawdown: -5.6% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 56.5%) - conservative balance sheet
+  • Sector Risk: REITs and property stocks are sensitive to interest rate changes and economic cycles affecting occupancy rates.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #3 (Score: 67.11/100)
+  ML Model: Rank #53 (Probability: 14.9%)
+
+  Factor Model recommends (ML Model does not):
+    - Strong fundamental metrics drive this recommendation
+    - ML model may see different patterns in historical data
+
+  Key Feature Values (ML Model):
+    - ROE: 11.35%
+    - Avg_Volume_3M: 8358989.10
+    - SMA_50: 2.10
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Balanced investors
+  (Mix of growth and stability characteristics suits moderate risk tolerance)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

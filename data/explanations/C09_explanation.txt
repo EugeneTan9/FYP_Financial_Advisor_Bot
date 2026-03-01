@@ -1,0 +1,54 @@
+============================================================
+STOCK RECOMMENDATION: C09.SI (C09.SI)
+============================================================
+Sector: Real Estate
+Current Price: $5.01
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Revenue Growth: 8.0% YoY
+  • Positive Earnings: EPS of $0.22
+
+Quality Factors:
+  • Mid Cap: $8.7B market cap
+
+Risk Profile:
+  • Low Volatility: 18.2% annualized (stable price movement)
+  • Maximum Drawdown: -22.0% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • MODERATE debt level (D/E = 137.9%)
+  • Sector Risk: REITs and property stocks are sensitive to interest rate changes and economic cycles affecting occupancy rates.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #42 (Score: 46.61/100)
+  ML Model: Rank #10 (Probability: 52.0%)
+
+  ML Model recommends (Factor Model does not):
+    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - May capture non-linear relationships not in factor formula
+
+  Key Feature Values (ML Model):
+    - ROE: 2.29%
+    - Avg_Volume_3M: 1491574.60
+    - SMA_50: 5.09
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

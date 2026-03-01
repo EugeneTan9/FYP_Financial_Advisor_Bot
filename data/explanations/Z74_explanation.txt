@@ -1,0 +1,58 @@
+============================================================
+STOCK RECOMMENDATION: Z74.SI (Z74.SI)
+============================================================
+Sector: Communication Services
+Current Price: $2.97
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Revenue Growth: 0.9% YoY
+  • Positive Earnings: EPS of $0.37
+  • Positive Momentum: Up 14.7% in past 6 months
+
+Quality Factors:
+  • Good ROE: 13.0%
+  • High Profit Margin: 48.0%
+  • Moderate Debt: D/E ratio of 41.8%
+  • Large Cap: $83.3B market cap (established company)
+
+Risk Profile:
+  • Low Volatility: 18.3% annualized (stable price movement)
+  • Maximum Drawdown: -6.2% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 41.8%) - conservative balance sheet
+  • Sector Risk: Telecom and media stocks face intense competition and high capital expenditure requirements.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #9 (Score: 62.45/100)
+  ML Model: Rank #20 (Probability: 45.8%)
+
+  Factor Model recommends (ML Model does not):
+    - Strong fundamental metrics drive this recommendation
+    - ML model may see different patterns in historical data
+
+  Key Feature Values (ML Model):
+    - ROE: 13.00%
+    - Avg_Volume_3M: 22917000.27
+    - SMA_50: 2.97
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

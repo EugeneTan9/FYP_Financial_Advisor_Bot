@@ -1,0 +1,58 @@
+============================================================
+STOCK RECOMMENDATION: P8Z.SI (P8Z.SI)
+============================================================
+Sector: Consumer Defensive
+Current Price: $0.77
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Strong Revenue Growth: 28.2% YoY
+  • Positive Earnings: EPS of $0.12
+  • Strong Price Momentum: Up 28.2% in past 6 months
+
+Quality Factors:
+  • Excellent ROE: 20.4% (strong capital efficiency)
+  • Healthy Profit Margin: 14.3%
+  • Low Debt: D/E ratio of 19.9% (conservative financing)
+  • Mid Cap: $2.3B market cap
+
+Risk Profile:
+  • Low Volatility: 23.1% annualized (stable price movement)
+  • Maximum Drawdown: -4.9% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 19.9%) - conservative balance sheet
+  • Sector Risk: Consumer staples offer stability but may face margin pressure from inflation and competition.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #10 (Score: 62.41/100)
+  ML Model: Rank #19 (Probability: 45.8%)
+
+  Factor Model recommends (ML Model does not):
+    - Strong fundamental metrics drive this recommendation
+    - ML model may see different patterns in historical data
+
+  Key Feature Values (ML Model):
+    - ROE: 20.45%
+    - Avg_Volume_3M: 822928.57
+    - SMA_50: 73.98%
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

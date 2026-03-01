@@ -1,0 +1,57 @@
+============================================================
+STOCK RECOMMENDATION: 1D0.SI (1D0.SI)
+============================================================
+Sector: Consumer Cyclical
+Current Price: $0.30
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Revenue Growth: 1.2% YoY
+  • Positive Earnings: EPS of $0.03
+  • Positive Momentum: Up 3.1% in past 6 months
+
+Quality Factors:
+  • Excellent ROE: 18.8% (strong capital efficiency)
+  • Healthy Profit Margin: 10.3%
+  • Moderate Debt: D/E ratio of 73.9%
+
+Risk Profile:
+  • Low Volatility: 20.1% annualized (stable price movement)
+  • Maximum Drawdown: 0.0% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 73.9%) - conservative balance sheet
+  • Sector Risk: Consumer discretionary stocks are vulnerable to economic downturns and changing consumer preferences.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #26 (Score: 54.81/100)
+  ML Model: Rank #7 (Probability: 53.7%)
+
+  ML Model recommends (Factor Model does not):
+    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - May capture non-linear relationships not in factor formula
+
+  Key Feature Values (ML Model):
+    - ROE: 18.85%
+    - Avg_Volume_3M: 173311.11
+    - SMA_50: 29.67%
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

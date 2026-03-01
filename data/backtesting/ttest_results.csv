@@ -1,0 +1,8 @@
+Comparison,t-stat,p-value,Significant
+Factor vs Random,2.751,0.0707,✗ No
+Factor vs STI,2.095,0.1271,✗ No
+Factor vs Dividend,1.504,0.2297,✗ No
+ML vs Random,2.071,0.1302,✗ No
+ML vs STI,0.881,0.4432,✗ No
+Hybrid vs Random,5.866,0.0099,✓ Yes
+Hybrid vs STI,5.687,0.0108,✓ Yes

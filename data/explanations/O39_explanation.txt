@@ -1,0 +1,58 @@
+============================================================
+STOCK RECOMMENDATION: O39.SI (O39.SI)
+============================================================
+Sector: Financial Services
+Current Price: $15.74
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Revenue Growth: 6.5% YoY
+  • Positive Earnings: EPS of $1.62
+  • Strong Price Momentum: Up 16.4% in past 6 months
+
+Quality Factors:
+  • Good ROE: 12.2%
+  • High Profit Margin: 53.2%
+  • Moderate Debt: D/E ratio of 52.7%
+  • Large Cap: $95.8B market cap (established company)
+
+Risk Profile:
+  • Low Volatility: 13.9% annualized (stable price movement)
+  • Maximum Drawdown: -1.8% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 52.7%) - conservative balance sheet
+  • Sector Risk: Banks and financial institutions are exposed to credit cycles, interest rate changes, and regulatory requirements.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #4 (Score: 66.56/100)
+  ML Model: Rank #37 (Probability: 35.8%)
+
+  Factor Model recommends (ML Model does not):
+    - Strong fundamental metrics drive this recommendation
+    - ML model may see different patterns in historical data
+
+  Key Feature Values (ML Model):
+    - ROE: 12.20%
+    - Avg_Volume_3M: 5323851.60
+    - SMA_50: 15.21
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

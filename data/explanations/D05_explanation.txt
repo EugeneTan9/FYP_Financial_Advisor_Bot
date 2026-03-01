@@ -1,0 +1,57 @@
+============================================================
+STOCK RECOMMENDATION: D05.SI (D05.SI)
+============================================================
+Sector: Financial Services
+Current Price: $41.33
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Earnings: EPS of $3.82
+  • Strong Price Momentum: Up 21.6% in past 6 months
+
+Quality Factors:
+  • Excellent ROE: 15.9% (strong capital efficiency)
+  • High Profit Margin: 49.5%
+  • Moderate Debt: D/E ratio of 52.7%
+  • Large Cap: $162.2B market cap (established company)
+
+Risk Profile:
+  • Low Volatility: 17.1% annualized (stable price movement)
+  • Maximum Drawdown: -1.0% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 52.7%) - conservative balance sheet
+  • Sector Risk: Banks and financial institutions are exposed to credit cycles, interest rate changes, and regulatory requirements.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #1 (Score: 69.98/100)
+  ML Model: Rank #8 (Probability: 53.1%)
+
+  Both models agree on this recommendation:
+    - Factor Model: Strong fundamentals (ROE, growth, low risk)
+    - ML Model: Identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+
+  Key Feature Values (ML Model):
+    - ROE: 15.88%
+    - Avg_Volume_3M: 4300665.70
+    - SMA_50: 39.45
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟡 MEDIUM CONFIDENCE
+  Both models rank this stock in their Top 10.
+  Good agreement, but not the strongest picks from either model.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

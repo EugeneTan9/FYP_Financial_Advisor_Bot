@@ -1,0 +1,56 @@
+Ticker,Company_Name,Market_Cap,PE_Ratio,EPS,Revenue_Growth,Profit_Margin,Dividend_Yield,Payout_Ratio,Debt_to_Equity,ROE,Sector,Industry,Missing_Pct
+D05.SI,DBS Group Holdings,162158034944,14.958116,3.82,-0.033,0.4945,5.35,0.7461,52.7045,0.15875,Financial Services,Banks - Regional,11.11111111111111
+O39.SI,OCBC Bank,95788687360,13.166667,1.62,0.065,0.53208,3.94,0.5052,52.7045,0.12198,Financial Services,Banks - Regional,11.11111111111111
+U11.SI,United Overseas Bank,60712742912,13.298182,2.75,-0.018,0.39793,3.86,0.6436,52.7045,0.09255999,Financial Services,Banks - Regional,11.11111111111111
+Z74.SI,Singtel,83296387072,13.648649,0.37,0.009,0.47967,2.62,0.3325,41.804,0.13003999,Communication Services,Telecom Services,11.11111111111111
+C52.SI,ComfortDelGro,3315147776,15.299999,0.1,0.144,0.04626,5.33,0.7618,55.771,0.08705,Industrials,Railroads,0.0
+C6L.SI,Singapore Airlines,22373185536,10.084507,0.71,0.019,0.11535,4.91,0.56259996,68.227,0.15387,Industrials,Airlines,0.0
+BN4.SI,Keppel Corporation,23652208640,23.428572,0.56,0.019,0.13373,2.61,0.6115,102.233,0.08948,Industrials,Conglomerates,11.11111111111111
+U96.SI,Sembcorp Industries,10810240000,10.857142,0.56,,0.16968,4.12,0.4109,165.411,0.17701,Utilities,Utilities - Diversified,11.11111111111111
+S63.SI,Singapore Technologies Engineering,30862768128,41.25,0.24,0.072,0.06585,1.6,0.695,181.381,0.26977,Industrials,Aerospace & Defense,0.0
+F34.SI,Wilmar International,22161702912,14.791667,0.24,0.063,0.01709,4.0,0.64809996,126.018,0.05663,Consumer Defensive,Packaged Foods,0.0
+9CI.SI,CapitaLand Investment,15163114496,101.333336,0.03,-0.246,0.06798,3.92,4.1379,61.735,0.01217,Real Estate,Real Estate Services,0.0
+J69U.SI,Mapletree Logistics Trust,4704295424,23.099998,0.1,0.135,0.44132,7.88,1.1683,54.53,0.044899996,Real Estate,REIT - Retail,0.0
+ME8U.SI,Mapletree Industrial Trust,5822541312,17.0,0.12,-0.081,0.49268,6.33,1.1496,52.571,0.06513,Real Estate,REIT - Industrial,0.0
+M44U.SI,Mapletree Pan Asia Commercial Trust,6644178944,43.333332,0.03,-0.031,0.27069,5.69,2.2846,78.425,0.02684,Real Estate,REIT - Industrial,0.0
+S68.SI,SGX,19304378368,29.557377,0.61,0.079,0.45676997,2.47,0.64769995,29.888,0.30133,Financial Services,Financial Data & Stock Exchanges,0.0
+Y92.SI,Thai Beverage,11434917888,11.375001,0.04,-0.053,0.07577,5.49,0.6107,108.676,0.14005,Consumer Defensive,Beverages - Wineries & Distilleries,0.0
+BS6.SI,YZJ Shipbldg SGD,16830585856,11.861111,0.36,-0.013,0.29413998,3.12,0.3393,21.725,0.30674,Industrials,Aerospace & Defense,0.0
+G13.SI,Genting Singapore,8699699200,18.000002,0.04,0.054,0.15919,5.56,1.061,0.031,0.04731,Consumer Cyclical,Resorts & Casinos,0.0
+H78.SI,Hongkong Land Holdings,18582800384,18.923079,-0.15,-0.227,-0.18586001,2.69,2.4472,20.263,-0.01081,Real Estate,Real Estate - Development,11.11111111111111
+V03.SI,Venture Corporation,4529597440,19.432098,0.81,-0.088,0.08967,4.44,0.9259,0.902,0.08402,Technology,Electronic Components,0.0
+U14.SI,UOL Group,9472057344,21.980392,0.51,0.218,0.14105,1.69,0.35119998,32.744,0.0372,Real Estate,Real Estate - Development,0.0
+C09.SI,City Developments,8692798464,44.227272,0.22,0.08,0.06027,0.85,0.367,137.9,0.02293,Real Estate,Real Estate - Development,0.0
+N2IU.SI,Mapletree North Asia Commercial Trust,7552052736,11.0,0.13,-0.02,0.77168,5.57,0.6104,61.463,0.07288,Real Estate,REIT - Office,0.0
+D01.SI,DFI Retail Group,5712405504,14.791667,-0.28,-0.004,-0.04262,2.45,0.90910006,447.151,-0.46627,Consumer Defensive,Grocery Stores,11.11111111111111
+S58.SI,SATS,5826167296,23.058825,0.17,0.091,0.04259,1.42,0.2924,144.476,0.09986,Industrials,Airports & Air Services,0.0
+CC3.SI,StarHub,1776001152,20.599998,0.05,-0.031,0.03672,5.77,1.3778,278.289,0.13003999,Communication Services,Telecom Services,0.0
+C07.SI,Jardine Cycle & Carriage,14003221504,13.269663,2.67,0.008,0.03723,4.05,0.53080004,40.337,0.13251,Industrials,Conglomerates,0.0
+C38U.SI,CapitaLand Ascendas REIT,18538461184,18.923079,0.13,0.047,0.57887,4.63,0.8143,62.3,0.059070002,Real Estate,REIT - Retail,0.0
+A17U.SI,Ascendas Real Estate Investment Trust,12452271104,15.882353,0.17,0.063,0.4954,3.16,0.89419997,73.536,0.07369,Real Estate,REIT - Industrial,0.0
+M04.SI,Mandarin Oriental International,4221123840,15.5833345,-0.07,-0.014,-0.17323999,0.015,0.0,15.409,-0.03203,Consumer Cyclical,Lodging,11.11111111111111
+AWX.SI,AEM Holdings,912361216,72.50001,0.04,0.311,0.03703,3.16,0.0,15.371,0.032780003,Technology,Semiconductor Equipment & Materials,11.11111111111111
+U10.SI,UOB-Kay Hian,3039467264,14.181818,0.22,0.078,0.31995,3.86,0.53169996,75.521,0.10142,Financial Services,Capital Markets,0.0
+BVA.SI,Frencken Group,1515395328,18.9,0.01,-0.003,0.04291,0.8,0.2791,17.861,0.027290002,Healthcare,Medical Instruments & Supplies,0.0
+QES.SI,Q&M Dental Group,724570880,8.444444,0.09,-0.034,0.13822,2.63,0.2219,,0.115389995,Basic Materials,Specialty Chemicals,11.11111111111111
+AIY.SI,iFAST Corporation,2796934400,28.78125,0.32,0.457,0.19431,1.08,0.2313,41.919,0.28024,Technology,Software - Application,0.0
+1D0.SI,Raffles Medical Group,491740960,13.166667,0.03,0.012,0.10325,5.13,0.7491,73.889,0.18847,Consumer Cyclical,Restaurants,0.0
+QC7.SI,Cordlife Group,501259104,53.0,0.01,-0.005,0.049050003,2.04,1.1702,95.8,0.05992,Healthcare,Medical Care Facilities,0.0
+5DD.SI,Micro-Mechanics Holdings,276673472,19.9,0.1,0.145,0.19429001,3.16,0.6309,4.297,0.26204002,Technology,Semiconductor Equipment & Materials,0.0
+A50.SI,Thomson Medical Group,1560022912,35.95,-0.0,0.069,-0.09567001,1.42,0.0,195.534,-0.07532,Healthcare,Medical Care Facilities,22.22222222222222
+546.SI,Medtecs International Corporation Limited,64844440,35.95,-0.04,0.427,-0.28109,1.42,0.0,20.073,-0.16413,Healthcare,Medical Instruments & Supplies,22.22222222222222
+F03.SI,Food Empire Holdings,1781082624,46.42857,0.07,0.217,0.05223,2.75,0.8785,30.853,0.09629,Consumer Defensive,Beverages - Non-Alcoholic,0.0
+P34.SI,Delfi Limited,641714816,14.999999,0.07,-0.005,0.06645,4.34,0.4037,5.209,0.12222,Consumer Defensive,Confectioners,0.0
+1J4.SI,Koufu Group,121842088,29.5,0.01,-0.002,0.06427,3.12,0.0,20.776,0.045939997,Industrials,Aerospace & Defense,11.11111111111111
+5OI.SI,Japan Foods Holding,22231836,15.5833345,-0.05,-0.152,-0.12401,2.68,0.0,172.475,-0.41544,Consumer Cyclical,Restaurants,22.22222222222222
+42R.SI,Jumbo Group Limited,168382528,28.0,0.01,-0.004,0.04551,2.68,0.7143,113.949,0.14774,Consumer Cyclical,Restaurants,0.0
+OV8.SI,Sheng Siong Group Ltd,3924231424,26.099998,0.1,0.144,0.09443,2.44,0.6653,18.314,0.27087,Consumer Defensive,Grocery Stores,0.0
+K71U.SI,Keppel DC REIT,4781658624,8.772727,0.11,0.052,1.1386399,5.38,0.6287,62.54,0.086540006,Real Estate,REIT - Office,0.0
+T82U.SI,Suntec REIT,4211990784,28.599998,0.05,0.165,0.29666,5.8,1.2045,62.067,0.02769,Real Estate,REIT - Diversified,0.0
+AJBU.SI,Keppel Infrastructure Trust,5646854144,12.157894,0.19,0.503,0.96932,4.48,0.3168,56.505,0.11354,Real Estate,REIT - Office,0.0
+CMOU.SI,CapitaLand China Trust,224556800,18.923079,-0.0,0.049,-0.027139999,1.16,0.0,86.16,-0.0057099997,Real Estate,REIT - Office,11.11111111111111
+C2PU.SI,Parkway Life Real Estate Investment Trust,2636047360,17.565216,0.23,0.059,0.97758,4.33,0.4284,53.013,0.09431,Real Estate,REIT - Healthcare Facilities,0.0
+E5H.SI,Golden Agri-Resources,3677684992,7.25,0.04,0.226,0.03416,2.77,0.1883,61.095,0.12222,Consumer Defensive,Farm Products,11.11111111111111
+C41.SI,Olam Group,594426496,8.974999,0.4,0.135,0.07221,0.56,0.05,38.668,0.16595,Consumer Cyclical,Luxury Goods,0.0
+U77.SI,Yanlord Land Group,73284912,24.340625,-0.0,-0.299,-0.00349,3.16,2.4174001,7.423,-0.0019400001,Technology,Software - Application,22.22222222222222
+P8Z.SI,Bumitama Agri Ltd.,2341094400,11.25,0.12,0.282,0.14288001,4.61,0.5389,19.871,0.20445,Consumer Defensive,Farm Products,0.0

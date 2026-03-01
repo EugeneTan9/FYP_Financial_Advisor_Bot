@@ -1,0 +1,55 @@
+============================================================
+STOCK RECOMMENDATION: 9CI.SI (9CI.SI)
+============================================================
+Sector: Real Estate
+Current Price: $2.53
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Earnings: EPS of $0.03
+  • Positive Momentum: Up 0.4% in past 6 months
+
+Quality Factors:
+  • Moderate Debt: D/E ratio of 61.7%
+  • Large Cap: $15.2B market cap (established company)
+
+Risk Profile:
+  • Low Volatility: 22.5% annualized (stable price movement)
+  • Maximum Drawdown: -15.9% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 61.7%) - conservative balance sheet
+  • Sector Risk: REITs and property stocks are sensitive to interest rate changes and economic cycles affecting occupancy rates.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #45 (Score: 45.13/100)
+  ML Model: Rank #6 (Probability: 54.4%)
+
+  ML Model recommends (Factor Model does not):
+    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - May capture non-linear relationships not in factor formula
+
+  Key Feature Values (ML Model):
+    - ROE: 1.22%
+    - Avg_Volume_3M: 8675142.98
+    - SMA_50: 2.64
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

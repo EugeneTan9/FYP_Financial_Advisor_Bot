@@ -1,0 +1,56 @@
+============================================================
+STOCK RECOMMENDATION: C41.SI (C41.SI)
+============================================================
+Sector: Consumer Cyclical
+Current Price: $2.78
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Strong Revenue Growth: 13.5% YoY
+  • Positive Earnings: EPS of $0.40
+  • Positive Momentum: Up 10.7% in past 6 months
+
+Quality Factors:
+  • Excellent ROE: 16.6% (strong capital efficiency)
+  • Moderate Debt: D/E ratio of 38.7%
+
+Risk Profile:
+  • Moderate Volatility: 28.7% annualized
+  • Maximum Drawdown: -12.7% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 38.7%) - conservative balance sheet
+  • Sector Risk: Consumer discretionary stocks are vulnerable to economic downturns and changing consumer preferences.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #28 (Score: 54.47/100)
+  ML Model: Rank #5 (Probability: 56.0%)
+
+  ML Model recommends (Factor Model does not):
+    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - May capture non-linear relationships not in factor formula
+
+  Key Feature Values (ML Model):
+    - ROE: 16.59%
+    - Avg_Volume_3M: 338.10
+    - SMA_50: 2.73
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Balanced investors
+  (Mix of growth and stability characteristics suits moderate risk tolerance)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

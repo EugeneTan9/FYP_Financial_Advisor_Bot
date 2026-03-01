@@ -1,0 +1,51 @@
+============================================================
+STOCK RECOMMENDATION: CMOU.SI (CMOU.SI)
+============================================================
+Sector: Real Estate
+Current Price: $0.21
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Revenue Growth: 4.9% YoY
+  • Strong Price Momentum: Up 60.3% in past 6 months
+
+Risk Profile:
+  • High Volatility: 67.9% annualized (expect larger price swings)
+  • Maximum Drawdown: -44.0% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • MODERATE debt level (D/E = 86.2%)
+  • Sector Risk: REITs and property stocks are sensitive to interest rate changes and economic cycles affecting occupancy rates.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #52 (Score: 37.46/100)
+  ML Model: Rank #4 (Probability: 57.0%)
+
+  ML Model recommends (Factor Model does not):
+    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - May capture non-linear relationships not in factor formula
+
+  Key Feature Values (ML Model):
+    - ROE: -0.57%
+    - Avg_Volume_3M: 1473853.97
+    - SMA_50: 22.94%
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+  🟠 LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Balanced investors
+  (Mix of growth and stability characteristics suits moderate risk tolerance)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================
