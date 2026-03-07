@@ -10,7 +10,13 @@ import joblib
 import os
 import warnings
 warnings.filterwarnings('ignore')
-
+from scipy.optimize import minimize
+import matplotlib
+matplotlib.use('Agg')   # Non-interactive backend for Streamlit
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+import io
+import base64
 # ============================================
 # PAGE CONFIGURATION
 # ============================================
@@ -291,6 +297,122 @@ def load_app_data():
 
     return data
 
+
+@st.cache_data
+def load_shap_data():
+    """
+    Load pre-computed SHAP values and expected value from notebook output.
+    Returns (shap_df, expected_value) or (None, None) if files not found.
+    """
+    shap_path = 'data/ml/shap_values.csv'
+    ev_path   = 'data/ml/shap_expected_value.txt'
+
+    if not os.path.exists(shap_path):
+        return None, None
+
+    shap_df = pd.read_csv(shap_path)
+
+    expected_value = 0.3   # fallback default
+    if os.path.exists(ev_path):
+        with open(ev_path, 'r') as f:
+            try:
+                expected_value = float(f.read().strip())
+            except ValueError:
+                pass
+
+    return shap_df, expected_value
+
+
+def get_shap_explanation(ticker, top_n=5):
+    """
+    Retrieve the top SHAP feature contributions for a specific ticker.
+
+    Returns a list of dicts with keys:
+        feature, shap_value, feature_value, direction, label
+    Sorted by absolute SHAP value descending.
+    Returns empty list if SHAP data unavailable.
+    """
+    shap_df, expected_value = load_shap_data()
+
+    if shap_df is None or ticker not in shap_df['Ticker'].values:
+        return [], expected_value or 0.3
+
+    row = shap_df[shap_df['Ticker'] == ticker].iloc[0]
+
+    # Extract all SHAP columns
+    shap_cols = [c for c in shap_df.columns if c.startswith('SHAP_')]
+
+    contributions = []
+    for col in shap_cols:
+        feature_name = col[5:]   # strip 'SHAP_' prefix
+        shap_val     = row[col]
+
+        # Get corresponding raw feature value if stored
+        feat_val = row.get(feature_name, np.nan)
+
+        contributions.append({
+            'feature':       feature_name,
+            'shap_value':    shap_val,
+            'feature_value': feat_val,
+            'direction':     'positive' if shap_val > 0 else 'negative',
+            'abs_shap':      abs(shap_val),
+        })
+
+    # Sort by absolute SHAP value
+    contributions.sort(key=lambda x: x['abs_shap'], reverse=True)
+    top_contributions = contributions[:top_n]
+
+    return top_contributions, expected_value
+
+
+# ---- Human-readable feature name mapping ----
+FEATURE_LABELS = {
+    'Revenue_Growth':  'Revenue Growth',
+    'EPS':             'Earnings Per Share (EPS)',
+    'Return_6M':       '6-Month Price Return',
+    'Return_3M':       '3-Month Price Return',
+    'Return_1M':       '1-Month Price Return',
+    'ROE':             'Return on Equity (ROE)',
+    'Profit_Margin':   'Profit Margin',
+    'Debt_to_Equity':  'Debt-to-Equity Ratio',
+    'Market_Cap':      'Market Capitalisation',
+    'Volatility':      'Price Volatility',
+    'Max_Drawdown':    'Maximum Drawdown',
+    'RSI':             'RSI (Momentum Indicator)',
+    'PE_Ratio':        'Price-to-Earnings Ratio',
+    'PB_Ratio':        'Price-to-Book Ratio',
+    'Dividend_Yield':  'Dividend Yield',
+    'Current_Ratio':   'Current Ratio (Liquidity)',
+    'Asset_Turnover':  'Asset Turnover',
+}
+
+def format_feature_label(feature_name):
+    """Return a human-readable label for a feature name."""
+    if feature_name.startswith('Sector_'):
+        return f"Sector: {feature_name[7:]}"
+    return FEATURE_LABELS.get(feature_name, feature_name.replace('_', ' '))
+
+
+def format_feature_value(feature_name, value):
+    """Format a raw feature value into a readable string."""
+    if pd.isna(value):
+        return 'N/A'
+    if feature_name.startswith('Sector_'):
+        return 'Yes' if value == 1 else 'No'
+    pct_features = [
+        'Revenue_Growth', 'Return_6M', 'Return_3M', 'Return_1M',
+        'ROE', 'Profit_Margin', 'Volatility', 'Max_Drawdown',
+        'Dividend_Yield'
+    ]
+    if feature_name in pct_features:
+        return f"{value:.1%}"
+    if feature_name == 'Market_Cap':
+        if value > 1e9:
+            return f"S${value/1e9:.1f}B"
+        return f"S${value/1e6:.0f}M"
+    return f"{value:.2f}"
+
+
 # ============================================
 # FACTOR SCORING MODEL
 # ============================================
@@ -566,27 +688,86 @@ DEFAULT_SECTOR_RISK = "May be affected by sector-specific and macroeconomic fact
 def generate_stock_explanation(stock_data, top_features=None):
     """
     Generate a Streamlit-ready markdown explanation for a stock.
+    Uses SHAP values when available for model-derived explanations.
+    Falls back to rule-based templates if SHAP data is unavailable.
     """
-    ticker = stock_data.get('Ticker', 'N/A')
-    company = stock_data.get('Company_Name', ticker)
-    sector = stock_data.get('Sector', 'Unknown')
+    ticker     = stock_data.get('Ticker', 'N/A')
+    company    = stock_data.get('Company_Name', ticker)
+    sector     = stock_data.get('Sector', 'Unknown')
     confidence = stock_data.get('Confidence', 'LOW')
     factor_score = stock_data.get('Factor_Score', 0)
-    factor_rank = stock_data.get('Factor_Rank', 'N/A')
-    ml_prob = stock_data.get('ML_Probability', 0)
-    ml_rank = stock_data.get('ML_Rank', 'N/A')
-    price = stock_data.get('Price', None)
+    factor_rank  = stock_data.get('Factor_Rank', 'N/A')
+    ml_prob      = stock_data.get('ML_Probability', 0)
+    ml_rank      = stock_data.get('ML_Rank', 'N/A')
+    price        = stock_data.get('Price', None)
 
     md = []
 
     # Price line
     if price and not pd.isna(price):
         md.append(f"**Current Price:** S${price:.2f}")
-
     md.append("")
 
-    # --- WHY RECOMMENDED ---
-    md.append("**📈 Why Recommended**")
+    # =============================================
+    # SHAP-BASED EXPLANATION (primary)
+    # =============================================
+    shap_contributions, expected_value = get_shap_explanation(ticker, top_n=8)
+    shap_available = len(shap_contributions) > 0
+
+    if shap_available:
+        md.append("**🤖 Why the ML Model Recommended This Stock**")
+        md.append("")
+        md.append(
+            f"The model's base prediction rate is **{expected_value:.1%}**. "
+            f"For **{company}**, the model predicts a **{ml_prob:.1%}** "
+            f"probability of outperforming — here is why:"
+        )
+        md.append("")
+
+        # Separate positive and negative contributors
+        positives = [c for c in shap_contributions if c['direction'] == 'positive']
+        negatives = [c for c in shap_contributions if c['direction'] == 'negative']
+
+        if positives:
+            md.append("*✅ Factors boosting this stock's score:*")
+            for c in positives[:4]:
+                label    = format_feature_label(c['feature'])
+                val_str  = format_feature_value(
+                    c['feature'], c['feature_value'])
+                impact   = c['shap_value']
+                md.append(
+                    f"- **{label}** ({val_str}) "
+                    f"— contributed **+{impact:.3f}** to predicted probability"
+                )
+            md.append("")
+
+        if negatives:
+            md.append("*⚠️ Factors reducing this stock's score:*")
+            for c in negatives[:3]:
+                label   = format_feature_label(c['feature'])
+                val_str = format_feature_value(
+                    c['feature'], c['feature_value'])
+                impact  = c['shap_value']
+                md.append(
+                    f"- **{label}** ({val_str}) "
+                    f"— contributed **{impact:.3f}** to predicted probability"
+                )
+            md.append("")
+
+        # SHAP waterfall chart reference
+        safe_ticker  = ticker.replace('.', '_')
+        waterfall_path = f"data/ml/shap/waterfall_{safe_ticker}.png"
+        if os.path.exists(waterfall_path):
+            md.append(
+                f"_📊 Full SHAP waterfall chart available in "
+                f"`data/ml/shap/waterfall_{safe_ticker}.png`_"
+            )
+            md.append("")
+
+    # =============================================
+    # FACTOR MODEL EXPLANATION (always shown)
+    # =============================================
+    md.append("**📈 Factor Model Analysis**")
     md.append("")
 
     growth_items = []
@@ -641,7 +822,6 @@ def generate_stock_explanation(stock_data, top_features=None):
             md.append(f"- {item}")
         md.append("")
 
-    # Risk profile
     md.append("*Risk Profile:*")
     vol = stock_data.get('Volatility')
     if pd.notna(vol):
@@ -655,10 +835,11 @@ def generate_stock_explanation(stock_data, top_features=None):
     max_dd = stock_data.get('Max_Drawdown')
     if pd.notna(max_dd):
         md.append(f"- **Max Drawdown:** {max_dd:.1%}")
-
     md.append("")
 
-    # --- RISK CONSIDERATIONS ---
+    # =============================================
+    # RISK CONSIDERATIONS
+    # =============================================
     md.append("**⚠️ Risk Considerations**")
     md.append("")
     if pd.notna(dte):
@@ -673,14 +854,17 @@ def generate_stock_explanation(stock_data, top_features=None):
     md.append(f"- **Sector:** {sector_risk}")
     md.append("")
 
-    # --- MODEL INSIGHTS ---
-    md.append("**🤖 Model Insights**")
+    # =============================================
+    # MODEL INSIGHTS TABLE
+    # =============================================
+    md.append("**🔬 Model Insights**")
     md.append("")
     md.append("| Model | Rank | Score |")
     md.append("|-------|------|-------|")
     md.append(f"| Factor Model | #{factor_rank} | {factor_score:.1f}/100 |")
     md.append(
-        f"| ML Model | #{ml_rank} | {ml_prob:.1%} outperform probability |")
+        f"| ML Model (RF + SHAP) | #{ml_rank} | "
+        f"{ml_prob:.1%} outperform probability |")
     md.append("")
 
     in_factor_top10 = (
@@ -695,26 +879,41 @@ def generate_stock_explanation(stock_data, top_features=None):
     elif in_ml_top10:
         md.append("> 🧠 **ML Model pick** — pattern-based selection.")
 
-    if top_features:
-        md.append("")
-        md.append("*Key ML features:*")
-        for f in top_features[:3]:
-            val = stock_data.get(f)
-            if pd.notna(val):
-                if isinstance(val, float):
-                    display = f"{val:.2%}" if abs(val) < 1 else f"{val:.2f}"
-                    md.append(f"- `{f}`: {display}")
-
+    if shap_available:
+        top_driver = shap_contributions[0]
+        label      = format_feature_label(top_driver['feature'])
+        md.append(
+            f"\n> 🔍 **Primary ML driver:** {label} "
+            f"(SHAP = {top_driver['shap_value']:+.3f})"
+        )
     md.append("")
 
-    # --- INVESTOR SUITABILITY ---
+    # =============================================
+    # INVESTOR SUITABILITY
+    # =============================================
     suitability = determine_suitability(stock_data)
     md.append("**👤 Suitable For**")
     md.append("")
     md.append(f"*{suitability}*")
     md.append("")
 
-    # --- DISCLAIMER ---
+    # =============================================
+    # EXPLANATION SOURCE NOTE
+    # =============================================
+    if shap_available:
+        md.append(
+            "_ML explanation powered by SHAP (SHapley Additive exPlanations) "
+            "— values are mathematically derived from the trained Random Forest, "
+            "not hand-coded rules._"
+        )
+    else:
+        md.append(
+            "_ML explanation uses rule-based templates. "
+            "Run `FYP_Model_Improvement.ipynb` to enable SHAP-powered explanations._"
+        )
+    md.append("")
+
+    # Disclaimer
     md.append("---")
     md.append(
         "*⚠️ For educational purposes only. Not financial advice. "
@@ -722,6 +921,380 @@ def generate_stock_explanation(stock_data, top_features=None):
     )
 
     return '\n'.join(md)
+
+
+# ============================================
+# PORTFOLIO OPTIMISATION FUNCTIONS
+# ============================================
+
+RISK_FREE_RATE = 0.04 / 252   # ~4% Singapore T-bill annualised
+TRADING_DAYS   = 252
+MAX_WEIGHT     = 0.40          # Max 40% per stock
+MIN_WEIGHT     = 0.01          # Min 1% per stock
+
+
+@st.cache_data
+def load_price_data():
+    """Load all daily price CSVs from data/prices/."""
+    price_data = {}
+    price_dir = 'data/prices/'
+    if not os.path.exists(price_dir):
+        return price_data
+    for fname in os.listdir(price_dir):
+        if not fname.endswith('.csv'):
+            continue
+        ticker = fname.replace('.csv', '') + '.SI'
+        try:
+            df = pd.read_csv(
+                os.path.join(price_dir, fname),
+                index_col=0, parse_dates=True)
+            if df.index.tz is not None:
+                df.index = df.index.tz_localize(None)
+            price_data[ticker] = df
+        except Exception:
+            pass
+    return price_data
+
+
+def build_return_matrix(tickers, price_data,
+                        start='2022-01-01', end='2023-12-31'):
+    """
+    Build an aligned daily return matrix for the given tickers
+    over the specified date range.
+    Returns (returns_df, excluded_list).
+    """
+    daily_returns = {}
+    excluded = []
+
+    for ticker in tickers:
+        if ticker not in price_data:
+            excluded.append(ticker)
+            continue
+        df_p = price_data[ticker]
+        price_col = 'Price' if 'Price' in df_p.columns else 'Close'
+        if price_col not in df_p.columns:
+            excluded.append(ticker)
+            continue
+        mask = (df_p.index >= start) & (df_p.index <= end)
+        series = df_p.loc[mask, price_col].dropna()
+        if len(series) < 60:
+            excluded.append(ticker)
+            continue
+        daily_returns[ticker] = series.pct_change().dropna()
+
+    if not daily_returns:
+        return pd.DataFrame(), excluded
+
+    returns_df = pd.DataFrame(daily_returns).dropna()
+    return returns_df, excluded
+
+
+def run_mvo(returns_df):
+    """
+    Run Mean-Variance Optimisation on the return matrix.
+    Returns a dict with optimal weights, equal weights,
+    mvp weights, and portfolio metrics.
+    """
+    n = returns_df.shape[1]
+    tickers = list(returns_df.columns)
+
+    mean_daily    = returns_df.mean()
+    annual_return = mean_daily * TRADING_DAYS
+    cov_matrix    = returns_df.cov() * TRADING_DAYS
+
+    def port_return(w):
+        return np.dot(w, annual_return.values)
+
+    def port_vol(w):
+        return np.sqrt(np.dot(w.T, np.dot(cov_matrix.values, w)))
+
+    def port_sharpe(w):
+        v = port_vol(w)
+        return (port_return(w) - RISK_FREE_RATE * TRADING_DAYS) / v if v > 0 else 0
+
+    bounds      = tuple((MIN_WEIGHT, MAX_WEIGHT) for _ in range(n))
+    constraints = [{'type': 'eq', 'fun': lambda w: np.sum(w) - 1}]
+    w0          = np.array([1.0 / n] * n)
+
+    # Max Sharpe
+    opt_result = minimize(
+        lambda w: -port_sharpe(w), w0,
+        method='SLSQP', bounds=bounds, constraints=constraints,
+        options={'maxiter': 1000, 'ftol': 1e-12}
+    )
+    opt_w = opt_result.x
+    opt_w[opt_w < 0.005] = 0
+    if opt_w.sum() > 0:
+        opt_w = opt_w / opt_w.sum()
+
+    # Min Variance
+    mvp_result = minimize(
+        port_vol, w0,
+        method='SLSQP', bounds=bounds, constraints=constraints,
+        options={'maxiter': 1000}
+    )
+    mvp_w = mvp_result.x / mvp_result.x.sum()
+
+    # Equal weight
+    eq_w = np.array([1.0 / n] * n)
+
+    return {
+        'tickers':        tickers,
+        'optimal_w':      opt_w,
+        'equal_w':        eq_w,
+        'mvp_w':          mvp_w,
+        'annual_return':  annual_return,
+        'cov_matrix':     cov_matrix,
+        'opt_return':     port_return(opt_w),
+        'opt_vol':        port_vol(opt_w),
+        'opt_sharpe':     port_sharpe(opt_w),
+        'eq_return':      port_return(eq_w),
+        'eq_vol':         port_vol(eq_w),
+        'eq_sharpe':      port_sharpe(eq_w),
+        'mvp_return':     port_return(mvp_w),
+        'mvp_vol':        port_vol(mvp_w),
+        'mvp_sharpe':     port_sharpe(mvp_w),
+    }
+
+
+def simulate_frontier(mvo_result, n_sim=5000):
+    """Monte Carlo simulation of random portfolios for frontier plotting."""
+    n             = len(mvo_result['tickers'])
+    annual_return = mvo_result['annual_return']
+    cov_matrix    = mvo_result['cov_matrix']
+
+    sim_vols    = np.zeros(n_sim)
+    sim_returns = np.zeros(n_sim)
+    sim_sharpes = np.zeros(n_sim)
+
+    for i in range(n_sim):
+        w = np.random.dirichlet(np.ones(n))
+        r = np.dot(w, annual_return.values)
+        v = np.sqrt(np.dot(w.T, np.dot(cov_matrix.values, w)))
+        sim_returns[i] = r
+        sim_vols[i]    = v
+        sim_sharpes[i] = (
+            (r - RISK_FREE_RATE * TRADING_DAYS) / v if v > 0 else 0)
+
+    return sim_vols, sim_returns, sim_sharpes
+
+
+def build_frontier_chart(mvo_result, recs_df):
+    """
+    Build and return the efficient frontier as a base64-encoded PNG
+    so it can be embedded in Streamlit via st.image().
+    """
+    DARK_BG  = '#0d1b2a'
+    CARD_BG  = '#162435'
+    GREEN    = '#00b894'
+    AMBER    = '#fdcb6e'
+    RED      = '#e17055'
+    MUTED    = '#8fa3b1'
+
+    sim_vols, sim_returns, sim_sharpes = simulate_frontier(mvo_result)
+
+    fig, ax = plt.subplots(figsize=(9, 6))
+    fig.patch.set_facecolor(DARK_BG)
+    ax.set_facecolor(CARD_BG)
+
+    # Random portfolios
+    sc = ax.scatter(
+        sim_vols * 100, sim_returns * 100,
+        c=sim_sharpes, cmap='viridis',
+        alpha=0.3, s=6, zorder=1)
+    cbar = plt.colorbar(sc, ax=ax)
+    cbar.set_label('Sharpe Ratio', color='white', fontsize=9)
+    cbar.ax.yaxis.set_tick_params(color='white')
+    plt.setp(cbar.ax.yaxis.get_ticklabels(), color='white')
+
+    # Individual stocks
+    for ticker in mvo_result['tickers']:
+        s_ret = mvo_result['annual_return'][ticker] * 100
+        s_vol = np.sqrt(mvo_result['cov_matrix'].loc[ticker, ticker]) * 100
+        ax.scatter(s_vol, s_ret, s=55, color=MUTED, zorder=3, alpha=0.8)
+        ax.annotate(
+            ticker.replace('.SI', ''), (s_vol, s_ret),
+            fontsize=7, color=MUTED,
+            xytext=(4, 3), textcoords='offset points')
+
+    # Key portfolios
+    ax.scatter(
+        mvo_result['mvp_vol'] * 100, mvo_result['mvp_return'] * 100,
+        marker='D', color=AMBER, s=130, zorder=5,
+        label=f"Min Variance (Sharpe={mvo_result['mvp_sharpe']:.2f})",
+        edgecolors='white', linewidths=0.8)
+    ax.scatter(
+        mvo_result['eq_vol'] * 100, mvo_result['eq_return'] * 100,
+        marker='s', color=RED, s=130, zorder=5,
+        label=f"Equal-Weight (Sharpe={mvo_result['eq_sharpe']:.2f})",
+        edgecolors='white', linewidths=0.8)
+    ax.scatter(
+        mvo_result['opt_vol'] * 100, mvo_result['opt_return'] * 100,
+        marker='*', color=GREEN, s=300, zorder=6,
+        label=f"Max Sharpe ★ (Sharpe={mvo_result['opt_sharpe']:.2f})",
+        edgecolors='white', linewidths=0.8)
+
+    # Capital Market Line
+    rf_pct    = RISK_FREE_RATE * TRADING_DAYS * 100
+    cml_x     = np.linspace(0, max(sim_vols) * 100 * 1.1, 100)
+    if mvo_result['opt_vol'] > 0:
+        slope = ((mvo_result['opt_return'] * 100 - rf_pct)
+                 / (mvo_result['opt_vol'] * 100))
+        ax.plot(cml_x, rf_pct + slope * cml_x,
+                color=GREEN, linewidth=1.5, linestyle='--',
+                alpha=0.7, label='Capital Market Line', zorder=4)
+
+    ax.set_xlabel('Annual Volatility (%)', color='white', fontsize=10)
+    ax.set_ylabel('Expected Annual Return (%)', color='white', fontsize=10)
+    ax.set_title('Efficient Frontier — Your SGX Portfolio',
+                 color='white', fontsize=12, fontweight='bold')
+    ax.tick_params(colors='white')
+    ax.spines[:].set_color('#2d4a63')
+    ax.legend(facecolor='#1e2d3d', labelcolor='white', fontsize=8,
+              loc='lower right')
+
+    plt.tight_layout()
+
+    # Convert to base64 for Streamlit
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', dpi=120,
+                bbox_inches='tight', facecolor=DARK_BG)
+    plt.close(fig)
+    buf.seek(0)
+    return buf
+
+
+def render_portfolio_results(mvo_result, recs_df,
+                             investment_amount=10_000):
+    """Render the full portfolio optimisation results in Streamlit."""
+    tickers  = mvo_result['tickers']
+    opt_w    = mvo_result['optimal_w']
+    eq_w     = mvo_result['equal_w']
+    n        = len(tickers)
+
+    # ---- Metrics summary ----
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric(
+            "Expected Annual Return",
+            f"{mvo_result['opt_return']:.2%}",
+            delta=f"{mvo_result['opt_return'] - mvo_result['eq_return']:+.2%} vs equal-weight")
+    with col2:
+        st.metric(
+            "Annual Volatility",
+            f"{mvo_result['opt_vol']:.2%}",
+            delta=f"{mvo_result['opt_vol'] - mvo_result['eq_vol']:+.2%} vs equal-weight",
+            delta_color="inverse")
+    with col3:
+        st.metric(
+            "Sharpe Ratio",
+            f"{mvo_result['opt_sharpe']:.3f}",
+            delta=f"{mvo_result['opt_sharpe'] - mvo_result['eq_sharpe']:+.3f} vs equal-weight")
+
+    st.markdown("")
+
+    # ---- Efficient frontier chart ----
+    st.markdown("**📈 Efficient Frontier**")
+    try:
+        buf = build_frontier_chart(mvo_result, recs_df)
+        st.image(buf, use_column_width=True)
+    except Exception as e:
+        st.warning(f"Chart could not be rendered: {e}")
+
+    st.markdown("")
+
+    # ---- Allocation table ----
+    st.markdown(f"**💰 Suggested Allocation for S${investment_amount:,}**")
+
+    alloc_rows = []
+    for i, ticker in enumerate(tickers):
+        w = opt_w[i]
+        if w < 0.001:
+            continue
+        amount   = w * investment_amount
+        name_row = recs_df[recs_df['Ticker'] == ticker]
+        company  = (name_row['Company_Name'].values[0]
+                    if len(name_row) > 0 and 'Company_Name' in name_row.columns
+                    else ticker)
+        conf     = (name_row['Confidence'].values[0]
+                    if len(name_row) > 0 else 'LOW')
+        exp_ret  = mvo_result['annual_return'][ticker]
+        alloc_rows.append({
+            'Ticker':        ticker,
+            'Company':       company,
+            'Confidence':    conf,
+            'Weight':        f"{w:.1%}",
+            'Amount (SGD)':  f"S${amount:,.0f}",
+            'Exp. Return':   f"{exp_ret:.2%}",
+        })
+
+    alloc_rows.sort(
+        key=lambda x: float(x['Weight'].replace('%', '')), reverse=True)
+
+    # Render as styled cards
+    for row in alloc_rows:
+        conf      = row['Confidence']
+        bar_color = {'HIGH': '#00b894',
+                     'MEDIUM': '#fdcb6e',
+                     'LOW': '#e17055'}.get(conf, '#8fa3b1')
+        weight_pct = float(row['Weight'].replace('%', ''))
+        st.markdown(f"""
+        <div style="background:#162435; border:1px solid #2d4a63;
+                    border-left: 4px solid {bar_color};
+                    border-radius:10px; padding:0.75rem 1rem;
+                    margin-bottom:0.5rem; display:flex;
+                    justify-content:space-between; align-items:center;">
+            <div>
+                <span style="color:white; font-weight:600;
+                             font-size:0.95rem;">{row['Company']}</span>
+                <span style="color:#8fa3b1; font-size:0.78rem;
+                             margin-left:0.5rem;">{row['Ticker']}</span>
+            </div>
+            <div style="text-align:right;">
+                <span style="color:{bar_color}; font-weight:700;
+                             font-size:1.1rem;">{row['Weight']}</span>
+                <span style="color:#dfe6e9; font-size:0.85rem;
+                             margin-left:0.75rem;">{row['Amount (SGD)']}</span>
+                <span style="color:#8fa3b1; font-size:0.78rem;
+                             margin-left:0.75rem;">
+                    Exp: {row['Exp. Return']}
+                </span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("")
+
+    # ---- Interpretation ----
+    sharpe_imp = ((mvo_result['opt_sharpe'] - mvo_result['eq_sharpe'])
+                  / abs(mvo_result['eq_sharpe']) * 100
+                  if mvo_result['eq_sharpe'] != 0 else 0)
+
+    st.markdown(f"""
+    **📝 What This Means**
+
+    The optimiser analysed the historical return and correlation patterns
+    of your {n} candidate stocks and found the weight allocation that
+    **maximises your risk-adjusted return** (Sharpe ratio).
+
+    - Your optimised portfolio's Sharpe ratio is **{sharpe_imp:+.1f}%**
+      {"better" if sharpe_imp >= 0 else "lower"} than simply splitting
+      equally across all stocks.
+    - Stocks with higher weights were selected because they offer a
+      favourable return relative to their own volatility **and** their
+      correlation with other stocks in your portfolio.
+    - A lower-returning stock can still receive a meaningful weight if it
+      moves differently from the others (low correlation = diversification
+      benefit).
+    """)
+
+    st.markdown("---")
+    st.markdown(
+        "*⚠️ Optimisation is based on 2022–2023 historical data. "
+        "Past correlations and returns may not persist. "
+        "This is for educational purposes only — not financial advice.*"
+    )
+
 
 # ============================================
 # INTENT RECOGNITION
@@ -751,7 +1324,7 @@ def detect_intent(user_message):
     if any(w in msg for w in ['more', 'detail', 'why', 'explain', 'tell me']):
         return 'explain_more'
     if any(w in msg for w in ['alternative', 'other', 'different', 'more stock',
-                               'show more', 'top 10']):
+                               'show more', 'top 10', 'back', 'recommendation']):
         return 'show_alternatives'
     if any(w in msg for w in ['restart', 'start over', 'start again', 'reset',
                                'new', 'begin']):
@@ -773,6 +1346,7 @@ def init_session_state():
         'top_n': 5,                  # 5 or 10
         'show_buttons': True,        # Whether to show choice buttons
         'selected_stock': None,      # Ticker for detail view
+        'portfolio_result': None,
     }
     for key, val in defaults.items():
         if key not in st.session_state:
@@ -790,7 +1364,8 @@ def add_user_message(content):
 def reset_session():
     """Full reset back to welcome state."""
     for key in ['state', 'messages', 'risk_level', 'preference',
-                'recommendations', 'top_n', 'show_buttons', 'selected_stock']:
+                'recommendations', 'top_n', 'show_buttons', 'selected_stock'
+                'portfolio_result']:
         if key in st.session_state:
             del st.session_state[key]
     init_session_state()
@@ -798,7 +1373,7 @@ def reset_session():
 # ============================================
 # RENDER FUNCTIONS
 # ============================================
-def render_stock_card(row, show_detail_button=True):
+def render_stock_card(row, show_detail_button=True, render_id=0):
     """Render a compact stock card in the chat."""
     conf = row.get('Confidence', 'LOW')
     card_class = {'HIGH': '', 'MEDIUM': 'medium', 'LOW': 'low'}.get(conf, 'low')
@@ -849,7 +1424,8 @@ def render_stock_card(row, show_detail_button=True):
     """, unsafe_allow_html=True)
 
     if show_detail_button:
-        if st.button(f"📋 More about {ticker}", key=f"detail_{ticker}"):
+        button_key = f"detail_{ticker}_{hash(ticker) % 100000}_{render_id}"
+        if st.button(f"📋 More about {ticker}", key=button_key):
             st.session_state.selected_stock = ticker
             st.session_state.state = 'showing_detail'
             add_user_message(f"Tell me more about {ticker}")
@@ -857,7 +1433,7 @@ def render_stock_card(row, show_detail_button=True):
             st.rerun()
 
 
-def render_recommendations(recs, top_n=5):
+def render_recommendations(recs, top_n=5, render_id=0):
     """Render the recommendation list in the chat."""
     if recs is None or len(recs) == 0:
         st.markdown("*No recommendations available for your criteria. "
@@ -873,17 +1449,17 @@ def render_recommendations(recs, top_n=5):
     if len(high) > 0:
         st.markdown("**🟢 High Confidence** — both models agree")
         for _, row in high.iterrows():
-            render_stock_card(row.to_dict())
+            render_stock_card(row.to_dict(), render_id=render_id)
 
     if len(medium) > 0:
         st.markdown("**🟡 Medium Confidence** — both models in Top 10")
         for _, row in medium.iterrows():
-            render_stock_card(row.to_dict())
+            render_stock_card(row.to_dict(), render_id=render_id)
 
     if len(low) > 0:
         st.markdown("**🟠 Lower Confidence** — single model pick")
         for _, row in low.iterrows():
-            render_stock_card(row.to_dict())
+            render_stock_card(row.to_dict(), render_id=render_id)
 
 
 def render_detail_view(ticker):
@@ -1020,9 +1596,19 @@ def handle_user_input(user_input):
 
         if intent == 'show_alternatives':
             st.session_state.top_n = 10
+            add_bot_message("Expanding to the **Top 10** recommendations:")
+            st.session_state.show_buttons = True
+            return
+
+        # Portfolio optimisation intent
+        if any(w in user_input.lower() for w in
+               ['optimise', 'optimize', 'portfolio', 'allocate',
+                'allocation', 'weights', 'how much']):
             add_bot_message(
-                "Expanding to the **Top 10** recommendations:"
-            )
+                "Running **Mean-Variance Portfolio Optimisation** on your "
+                "recommended stocks. This finds the mathematically optimal "
+                "allocation that maximises your Sharpe ratio...")
+            st.session_state.state = 'showing_portfolio'
             st.session_state.show_buttons = True
             return
 
@@ -1030,7 +1616,23 @@ def handle_user_input(user_input):
             "You can ask me to:\n"
             "- **\"Tell me more about [ticker]\"** — full stock explanation\n"
             "- **\"Show more\"** — expand to Top 10\n"
+            "- **\"Optimise my portfolio\"** — get optimal allocation weights\n"
             "- **\"Start over\"** — change your risk or preference"
+        )
+        st.session_state.show_buttons = True
+        return
+
+    # --- STATE: showing_portfolio ---
+    if state == 'showing_portfolio':
+        if intent == 'show_alternatives':
+            st.session_state.state = 'showing_recommendations'
+            st.session_state.show_buttons = True
+            add_bot_message("Back to your recommendations:")
+            return
+        add_bot_message(
+            "You can:\n"
+            "- **\"Back to recommendations\"** — see the stock list again\n"
+            "- **\"Start over\"** — change your preferences"
         )
         st.session_state.show_buttons = True
         return
@@ -1067,7 +1669,6 @@ def handle_button_choice(choice_text):
     """Handle button click by simulating user input."""
     add_user_message(choice_text)
     handle_user_input(choice_text)
-    st.session_state.show_buttons = False
 
 # ============================================
 # SIDEBAR
@@ -1197,14 +1798,32 @@ def render_choice_buttons():
                     st.rerun()
 
     elif state == 'showing_recommendations':
-        cols = st.columns(2)
+        cols = st.columns(3)
         with cols[0]:
             if st.button("📊 Show Top 10", key="btn_top10",
                          use_container_width=True):
                 handle_button_choice("show more")
                 st.rerun()
         with cols[1]:
+            if st.button("⚡ Optimise Portfolio", key="btn_optimise",
+                         use_container_width=True):
+                handle_button_choice("optimise my portfolio")
+                st.rerun()
+        with cols[2]:
             if st.button("🔄 Start Over", key="btn_restart_recs",
+                         use_container_width=True):
+                reset_session()
+                st.rerun()
+
+    elif state == 'showing_portfolio':
+        cols = st.columns(2)
+        with cols[0]:
+            if st.button("⬅️ Back to Recommendations", key="btn_back_portfolio",
+                         use_container_width=True):
+                handle_button_choice("back to recommendations")
+                st.rerun()
+        with cols[1]:
+            if st.button("🔄 Start Over", key="btn_restart_portfolio",
                          use_container_width=True):
                 reset_session()
                 st.rerun()
@@ -1252,7 +1871,7 @@ def main():
         st.session_state.show_buttons = True
 
     # Render all chat messages
-    for msg in st.session_state.messages:
+    for i, msg in enumerate(st.session_state.messages):
         with st.chat_message(msg['role']):
             st.markdown(msg['content'])
 
@@ -1265,13 +1884,48 @@ def main():
                     if st.session_state.recommendations is not None:
                         render_recommendations(
                             st.session_state.recommendations,
-                            st.session_state.top_n
-                        )
+                            st.session_state.top_n,
+                            render_id=i
+                            )
 
                 # Render stock detail if in detail state
                 elif st.session_state.state == 'showing_detail':
                     if st.session_state.selected_stock:
                         render_detail_view(st.session_state.selected_stock)
+
+
+                elif st.session_state.state == 'showing_portfolio':
+                    recs = st.session_state.recommendations
+                    if recs is not None and len(recs) > 0:
+                        # Run optimisation if not already cached
+                        if st.session_state.portfolio_result is None:
+                            price_data = load_price_data()
+                            tickers = recs.head(
+                                st.session_state.top_n)['Ticker'].tolist()
+                            with st.spinner(
+                                "Optimising portfolio weights..."):
+                                returns_df, excluded = build_return_matrix(
+                                    tickers, price_data)
+                                if excluded:
+                                    st.warning(
+                                        f"⚠ Excluded (insufficient price data): "
+                                        f"{', '.join(excluded)}")
+                                if len(returns_df.columns) >= 2:
+                                    mvo = run_mvo(returns_df)
+                                    st.session_state.portfolio_result = mvo
+                                else:
+                                    st.error(
+                                        "Not enough stocks with price data "
+                                        "to run optimisation. "
+                                        "Try expanding to Top 10 first.")
+
+                        if st.session_state.portfolio_result is not None:
+                            render_portfolio_results(
+                                st.session_state.portfolio_result,
+                                recs
+                            )
+                    else:
+                        st.warning("No recommendations available to optimise.")
 
     # Render choice buttons below chat
     if st.session_state.show_buttons:
