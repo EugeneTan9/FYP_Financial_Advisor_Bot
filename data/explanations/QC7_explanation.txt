@@ -8,6 +8,7 @@ WHY RECOMMENDED:
 ----------------------------------------
 
 Growth Factors:
+  • Strong Revenue Growth: 18.5% YoY
   • Positive Earnings: EPS of $0.01
   • Strong Price Momentum: Up 16.0% in past 6 months
 
@@ -17,33 +18,33 @@ Risk Profile:
 
 RISK CONSIDERATIONS:
 ----------------------------------------
-  • MODERATE debt level (D/E = 95.8%)
+  • MODERATE debt level (D/E = 138.8%)
   • Sector Risk: Healthcare stocks are subject to regulatory approval risks, patent expirations, and policy changes.
 
 MODEL INSIGHTS:
 ----------------------------------------
-  Factor Model: Rank #41 (Score: 47.19/100)
-  ML Model: Rank #2 (Probability: 64.4%)
+  Factor Model: Rank #44 (Score: 48.82/100)
+  ML Model: Rank #2 (Probability: 67.5%)
 
   ML Model recommends (Factor Model does not):
-    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - ML identified patterns in [Price_to_SMA50, Avg_Volume_3M, ROE]
     - May capture non-linear relationships not in factor formula
 
   Key Feature Values (ML Model):
-    - ROE: 5.99%
+    - Price_to_SMA50: 97.12%
     - Avg_Volume_3M: 433765.08
-    - SMA_50: 27.90%
+    - ROE: 8.12%
 
 RECOMMENDATION CONFIDENCE:
 ----------------------------------------
-  🟠 LOW CONFIDENCE
+   LOW CONFIDENCE
   Only one model recommends this stock.
   Consider this a model-specific pick; review factors carefully.
 
 SUITABLE FOR:
 ----------------------------------------
-  Conservative investors
-  (Lower volatility and stable fundamentals suit risk-averse investors)
+  Balanced investors
+  (Mix of growth and stability characteristics suits moderate risk tolerance)
 
 ============================================================
 DISCLAIMER: This is for educational purposes only and does not

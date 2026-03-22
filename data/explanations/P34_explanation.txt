@@ -1,0 +1,54 @@
+============================================================
+STOCK RECOMMENDATION: P34.SI (P34.SI)
+============================================================
+Sector: Consumer Defensive
+Current Price: $0.76
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Positive Earnings: EPS of $0.07
+
+Quality Factors:
+  • Good ROE: 12.2%
+  • Low Debt: D/E ratio of 6.2% (conservative financing)
+
+Risk Profile:
+  • Low Volatility: 21.7% annualized (stable price movement)
+  • Maximum Drawdown: -25.2% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 6.2%) - conservative balance sheet
+  • Sector Risk: Consumer staples offer stability but may face margin pressure from inflation and competition.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #41 (Score: 49.71/100)
+  ML Model: Rank #7 (Probability: 53.8%)
+
+  ML Model recommends (Factor Model does not):
+    - ML identified patterns in [Price_to_SMA50, Avg_Volume_3M, ROE]
+    - May capture non-linear relationships not in factor formula
+
+  Key Feature Values (ML Model):
+    - Price_to_SMA50: 95.86%
+    - Avg_Volume_3M: 304849.21
+    - ROE: 12.22%
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+   LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Conservative investors
+  (Lower volatility and stable fundamentals suit risk-averse investors)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

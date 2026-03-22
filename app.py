@@ -1,6 +1,6 @@
 # ============================================
-# TASK 18: STREAMLIT CHATBOT INTERFACE
-# SGX Stock Advisor Bot
+# STREAMLIT CHATBOT INTERFACE
+# SGX Financial Advisor Bot
 # ============================================
 
 import streamlit as st
@@ -17,12 +17,13 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import io
 import base64
+
 # ============================================
 # PAGE CONFIGURATION
 # ============================================
 st.set_page_config(
-    page_title="SGX Stock Advisor",
-    page_icon="📈",
+    page_title="SGX Financial Advisor Bot",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -667,7 +668,7 @@ def get_recommendations(risk_level, preference, top_n=5):
     return recommended
 
 # ============================================
-# EXPLANATION GENERATOR (Markdown, for Streamlit)
+# EXPLANATION GENERATOR (Markdown)
 # ============================================
 SECTOR_RISKS = {
     'Financial Services': "Exposed to credit cycles, interest rate changes, and MAS regulatory requirements.",
@@ -1271,7 +1272,7 @@ def render_portfolio_results(mvo_result, recs_df,
                   if mvo_result['eq_sharpe'] != 0 else 0)
 
     st.markdown(f"""
-    **📝 What This Means**
+    **What This Means**
 
     The optimiser analysed the historical return and correlation patterns
     of your {n} candidate stocks and found the weight allocation that
@@ -1528,7 +1529,7 @@ def handle_user_input(user_input):
             return
 
         add_bot_message(
-            f"Got it — **{st.session_state.risk_level} risk**. 👍\n\n"
+            f"Got it — **{st.session_state.risk_level} risk**. \n\n"
             "Now, what kind of stocks are you interested in?\n\n"
             "- **Growth** — technology, healthcare, consumer companies with "
             "higher growth potential\n"
@@ -1677,10 +1678,10 @@ def render_sidebar():
     with st.sidebar:
         st.markdown("""
         <div style="text-align:center; padding: 0.5rem 0 1rem 0;">
-            <span style="font-size:2rem;">📈</span>
+            <span style="font-size:2rem;"></span>
             <h2 style="font-family:'DM Serif Display',serif; color:#00b894;
                        font-size:1.2rem; margin:0.25rem 0 0 0;">
-                SGX Stock Advisor
+                SGX Financial Advisor Bot
             </h2>
             <p style="color:#8fa3b1; font-size:0.75rem; margin:0;">
                 Powered by Factor + ML Models
@@ -1851,7 +1852,7 @@ def main():
     # Header
     st.markdown("""
     <div class="app-header">
-        <h1>📈 SGX Stock Advisor</h1>
+        <h1>SGX Financial Advisor Bot</h1>
         <p>Personalised SGX stock recommendations for first-time investors</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1859,7 +1860,7 @@ def main():
     # Welcome message (only on first load)
     if not st.session_state.messages:
         add_bot_message(
-            "👋 Hello! I'm your SGX Stock Advisor.\n\n"
+            "Hello! I'm your SGX Stock Advisor.\n\n"
             "I'll help you find Singapore Exchange (SGX) stocks suited to your "
             "investment goals using a combination of fundamental factor analysis "
             "and machine learning.\n\n"

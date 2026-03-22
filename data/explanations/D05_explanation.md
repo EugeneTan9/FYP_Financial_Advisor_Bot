@@ -1,8 +1,8 @@
-## D05.SI (D05.SI) 🟡 MEDIUM CONFIDENCE
+## D05.SI (D05.SI)  LOW CONFIDENCE
 **Sector:** Financial Services
 **Current Price:** $41.33
 
-### 📈 Why Recommended
+###  Why Recommended
 
 **Growth Factors:**
 - **Positive Earnings:** EPS of $3.82
@@ -11,44 +11,43 @@
 **Quality Factors:**
 - **Excellent ROE:** 15.9%
 - **Healthy Profit Margin:** 49.5%
-- **Moderate Debt:** D/E of 52.7%
+- **Moderate Debt:** D/E of 49.7%
 
 **Risk Profile:**
-- 🟢 **Low Volatility:** 17.1% annualized
+-  **Low Volatility:** 17.1% annualized
 - **Max Drawdown:** -1.0%
 
-### ⚠️ Risk Considerations
+###  Risk Considerations
 
-- 🟢 **Low debt level** (D/E = 52.7%)
+-  **Low debt level** (D/E = 49.7%)
 - **Sector Risk:** Banks and financial institutions are exposed to credit cycles, interest rate changes, and regulatory requirements.
 
-### 🤖 Model Insights
+###  Model Insights
 
 | Model | Rank | Score |
 |-------|------|-------|
-| Factor Model | #1 | 69.98/100 |
-| ML Model | #8 | 53.1% probability |
+| Factor Model | #1 | 70.08/100 |
+| ML Model | #12 | 50.9% probability |
 
-> ✅ **Both models agree** on this recommendation.
-> - Factor Model: Strong fundamentals drive this pick
-> - ML Model: Identified patterns in `ROE, Avg_Volume_3M, SMA_50`
+>  **Factor Model recommends** (ML does not)
+> - Strong fundamental metrics drive this recommendation
 
 **Key Feature Values:**
-- `ROE`: 15.88%
+- `Price_to_SMA50`: 1.05
 - `Avg_Volume_3M`: 4300665.70
-- `SMA_50`: 39.45
+- `ROE`: 15.88%
 
-### 🎯 Recommendation Confidence
+###  Recommendation Confidence
 
-**🟡 MEDIUM CONFIDENCE**
+** LOW CONFIDENCE**
 
-Both models rank this stock in their **Top 10**. Good agreement, but not the strongest pick from either model.
+Only one model recommends this stock. Consider this a model-specific pick; review factors carefully.
 
-### 👤 Suitable For
+###  Suitable For
 
 **Conservative investors**
 
 *Lower volatility and stable fundamentals suit risk-averse investors*
 
 ---
-*⚠️ Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*
+* Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*

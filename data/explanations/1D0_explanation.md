@@ -1,8 +1,8 @@
-## 1D0.SI (1D0.SI) 🟠 LOW CONFIDENCE
+## 1D0.SI (1D0.SI)  LOW CONFIDENCE
 **Sector:** Consumer Cyclical
 **Current Price:** $0.30
 
-### 📈 Why Recommended
+###  Why Recommended
 
 **Growth Factors:**
 - **Positive Revenue Growth:** 1.2% YoY
@@ -15,40 +15,40 @@
 - **Moderate Debt:** D/E of 73.9%
 
 **Risk Profile:**
-- 🟢 **Low Volatility:** 20.1% annualized
+-  **Low Volatility:** 20.1% annualized
 - **Max Drawdown:** 0.0%
 
-### ⚠️ Risk Considerations
+###  Risk Considerations
 
-- 🟢 **Low debt level** (D/E = 73.9%)
+-  **Low debt level** (D/E = 73.9%)
 - **Sector Risk:** Consumer discretionary stocks are vulnerable to economic downturns and changing consumer preferences.
 
-### 🤖 Model Insights
+###  Model Insights
 
 | Model | Rank | Score |
 |-------|------|-------|
-| Factor Model | #26 | 54.81/100 |
-| ML Model | #7 | 53.7% probability |
+| Factor Model | #27 | 54.80/100 |
+| ML Model | #4 | 60.4% probability |
 
-> 🧠 **ML Model recommends** (Factor does not)
-> - ML identified patterns in `ROE, Avg_Volume_3M, SMA_50`
+>  **ML Model recommends** (Factor does not)
+> - ML identified patterns in `Price_to_SMA50, Avg_Volume_3M, ROE`
 
 **Key Feature Values:**
-- `ROE`: 18.85%
+- `Price_to_SMA50`: 1.02
 - `Avg_Volume_3M`: 173311.11
-- `SMA_50`: 29.67%
+- `ROE`: 18.85%
 
-### 🎯 Recommendation Confidence
+###  Recommendation Confidence
 
-**🟠 LOW CONFIDENCE**
+** LOW CONFIDENCE**
 
 Only one model recommends this stock. Consider this a model-specific pick; review factors carefully.
 
-### 👤 Suitable For
+###  Suitable For
 
 **Conservative investors**
 
 *Lower volatility and stable fundamentals suit risk-averse investors*
 
 ---
-*⚠️ Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*
+* Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*

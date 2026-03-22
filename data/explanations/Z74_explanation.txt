@@ -16,7 +16,7 @@ Quality Factors:
   • Good ROE: 13.0%
   • High Profit Margin: 48.0%
   • Moderate Debt: D/E ratio of 41.8%
-  • Large Cap: $83.3B market cap (established company)
+  • Large Cap: $85.9B market cap (established company)
 
 Risk Profile:
   • Low Volatility: 18.3% annualized (stable price movement)
@@ -29,21 +29,21 @@ RISK CONSIDERATIONS:
 
 MODEL INSIGHTS:
 ----------------------------------------
-  Factor Model: Rank #9 (Score: 62.45/100)
-  ML Model: Rank #20 (Probability: 45.8%)
+  Factor Model: Rank #8 (Score: 62.46/100)
+  ML Model: Rank #13 (Probability: 50.7%)
 
   Factor Model recommends (ML Model does not):
     - Strong fundamental metrics drive this recommendation
     - ML model may see different patterns in historical data
 
   Key Feature Values (ML Model):
-    - ROE: 13.00%
+    - Price_to_SMA50: 1.00
     - Avg_Volume_3M: 22917000.27
-    - SMA_50: 2.97
+    - ROE: 13.00%
 
 RECOMMENDATION CONFIDENCE:
 ----------------------------------------
-  🟠 LOW CONFIDENCE
+   LOW CONFIDENCE
   Only one model recommends this stock.
   Consider this a model-specific pick; review factors carefully.
 

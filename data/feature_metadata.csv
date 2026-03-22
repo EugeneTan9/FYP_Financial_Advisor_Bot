@@ -1,8 +1,8 @@
 Feature,Scaling,Data_Type
-Ticker,None,object
-Date,None,object
-Sector,None,object
-Industry,None,object
+Ticker,None,str
+Date,None,str
+Sector,None,str
+Industry,None,str
 Open,StandardScaler,float64
 High,StandardScaler,float64
 Low,StandardScaler,float64

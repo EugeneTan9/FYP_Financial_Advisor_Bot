@@ -13,7 +13,7 @@ Growth Factors:
 
 Quality Factors:
   • Good ROE: 14.0%
-  • Large Cap: $11.4B market cap (established company)
+  • Large Cap: $10.9B market cap (established company)
 
 Risk Profile:
   • Low Volatility: 21.6% annualized (stable price movement)
@@ -26,21 +26,21 @@ RISK CONSIDERATIONS:
 
 MODEL INSIGHTS:
 ----------------------------------------
-  Factor Model: Rank #31 (Score: 52.27/100)
-  ML Model: Rank #9 (Probability: 52.0%)
+  Factor Model: Rank #32 (Score: 52.26/100)
+  ML Model: Rank #6 (Probability: 54.2%)
 
   ML Model recommends (Factor Model does not):
-    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - ML identified patterns in [Price_to_SMA50, Avg_Volume_3M, ROE]
     - May capture non-linear relationships not in factor formula
 
   Key Feature Values (ML Model):
-    - ROE: 14.01%
+    - Price_to_SMA50: 1.01
     - Avg_Volume_3M: 29150942.06
-    - SMA_50: 49.44%
+    - ROE: 14.01%
 
 RECOMMENDATION CONFIDENCE:
 ----------------------------------------
-  🟠 LOW CONFIDENCE
+   LOW CONFIDENCE
   Only one model recommends this stock.
   Consider this a model-specific pick; review factors carefully.
 

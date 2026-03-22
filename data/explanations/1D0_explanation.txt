@@ -28,21 +28,21 @@ RISK CONSIDERATIONS:
 
 MODEL INSIGHTS:
 ----------------------------------------
-  Factor Model: Rank #26 (Score: 54.81/100)
-  ML Model: Rank #7 (Probability: 53.7%)
+  Factor Model: Rank #27 (Score: 54.80/100)
+  ML Model: Rank #4 (Probability: 60.4%)
 
   ML Model recommends (Factor Model does not):
-    - ML identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - ML identified patterns in [Price_to_SMA50, Avg_Volume_3M, ROE]
     - May capture non-linear relationships not in factor formula
 
   Key Feature Values (ML Model):
-    - ROE: 18.85%
+    - Price_to_SMA50: 1.02
     - Avg_Volume_3M: 173311.11
-    - SMA_50: 29.67%
+    - ROE: 18.85%
 
 RECOMMENDATION CONFIDENCE:
 ----------------------------------------
-  🟠 LOW CONFIDENCE
+   LOW CONFIDENCE
   Only one model recommends this stock.
   Consider this a model-specific pick; review factors carefully.
 

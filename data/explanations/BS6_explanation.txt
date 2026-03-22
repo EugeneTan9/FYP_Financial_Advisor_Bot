@@ -8,14 +8,15 @@ WHY RECOMMENDED:
 ----------------------------------------
 
 Growth Factors:
-  • Positive Earnings: EPS of $0.36
+  • Strong Revenue Growth: 15.8% YoY
+  • Positive Earnings: EPS of $0.41
   • Strong Price Momentum: Up 21.7% in past 6 months
 
 Quality Factors:
-  • Excellent ROE: 30.7% (strong capital efficiency)
-  • High Profit Margin: 29.4%
-  • Low Debt: D/E ratio of 21.7% (conservative financing)
-  • Large Cap: $16.8B market cap (established company)
+  • Excellent ROE: 29.4% (strong capital efficiency)
+  • High Profit Margin: 30.3%
+  • Low Debt: D/E ratio of 17.1% (conservative financing)
+  • Large Cap: $15.8B market cap (established company)
 
 Risk Profile:
   • Moderate Volatility: 37.6% annualized
@@ -23,33 +24,33 @@ Risk Profile:
 
 RISK CONSIDERATIONS:
 ----------------------------------------
-  • LOW debt level (D/E = 21.7%) - conservative balance sheet
+  • LOW debt level (D/E = 17.1%) - conservative balance sheet
   • Sector Risk: Industrial stocks are cyclical and sensitive to economic slowdowns and supply chain disruptions.
 
 MODEL INSIGHTS:
 ----------------------------------------
-  Factor Model: Rank #8 (Score: 62.67/100)
-  ML Model: Rank #1 (Probability: 71.8%)
+  Factor Model: Rank #5 (Score: 64.98/100)
+  ML Model: Rank #1 (Probability: 68.5%)
 
   Both models agree on this recommendation:
     - Factor Model: Strong fundamentals (ROE, growth, low risk)
-    - ML Model: Identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+    - ML Model: Identified patterns in [Price_to_SMA50, Avg_Volume_3M, ROE]
 
   Key Feature Values (ML Model):
-    - ROE: 30.67%
+    - Price_to_SMA50: 1.12
     - Avg_Volume_3M: 29535866.33
-    - SMA_50: 2.51
+    - ROE: 29.44%
 
 RECOMMENDATION CONFIDENCE:
 ----------------------------------------
-  🟡 MEDIUM CONFIDENCE
-  Both models rank this stock in their Top 10.
-  Good agreement, but not the strongest picks from either model.
+   HIGH CONFIDENCE
+  Both Factor and ML models rank this stock in their Top 5.
+  Strong agreement suggests robust recommendation.
 
 SUITABLE FOR:
 ----------------------------------------
-  Conservative investors
-  (Lower volatility and stable fundamentals suit risk-averse investors)
+  Balanced investors
+  (Mix of growth and stability characteristics suits moderate risk tolerance)
 
 ============================================================
 DISCLAIMER: This is for educational purposes only and does not

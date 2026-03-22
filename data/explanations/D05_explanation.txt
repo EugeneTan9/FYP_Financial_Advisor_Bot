@@ -14,8 +14,8 @@ Growth Factors:
 Quality Factors:
   • Excellent ROE: 15.9% (strong capital efficiency)
   • High Profit Margin: 49.5%
-  • Moderate Debt: D/E ratio of 52.7%
-  • Large Cap: $162.2B market cap (established company)
+  • Moderate Debt: D/E ratio of 49.7%
+  • Large Cap: $162.9B market cap (established company)
 
 Risk Profile:
   • Low Volatility: 17.1% annualized (stable price movement)
@@ -23,28 +23,28 @@ Risk Profile:
 
 RISK CONSIDERATIONS:
 ----------------------------------------
-  • LOW debt level (D/E = 52.7%) - conservative balance sheet
+  • LOW debt level (D/E = 49.7%) - conservative balance sheet
   • Sector Risk: Banks and financial institutions are exposed to credit cycles, interest rate changes, and regulatory requirements.
 
 MODEL INSIGHTS:
 ----------------------------------------
-  Factor Model: Rank #1 (Score: 69.98/100)
-  ML Model: Rank #8 (Probability: 53.1%)
+  Factor Model: Rank #1 (Score: 70.08/100)
+  ML Model: Rank #12 (Probability: 50.9%)
 
-  Both models agree on this recommendation:
-    - Factor Model: Strong fundamentals (ROE, growth, low risk)
-    - ML Model: Identified patterns in [ROE, Avg_Volume_3M, SMA_50]
+  Factor Model recommends (ML Model does not):
+    - Strong fundamental metrics drive this recommendation
+    - ML model may see different patterns in historical data
 
   Key Feature Values (ML Model):
-    - ROE: 15.88%
+    - Price_to_SMA50: 1.05
     - Avg_Volume_3M: 4300665.70
-    - SMA_50: 39.45
+    - ROE: 15.88%
 
 RECOMMENDATION CONFIDENCE:
 ----------------------------------------
-  🟡 MEDIUM CONFIDENCE
-  Both models rank this stock in their Top 10.
-  Good agreement, but not the strongest picks from either model.
+   LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
 
 SUITABLE FOR:
 ----------------------------------------

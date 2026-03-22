@@ -1,0 +1,58 @@
+============================================================
+STOCK RECOMMENDATION: U10.SI (U10.SI)
+============================================================
+Sector: Financial Services
+Current Price: $1.56
+
+WHY RECOMMENDED:
+----------------------------------------
+
+Growth Factors:
+  • Strong Revenue Growth: 20.4% YoY
+  • Positive Earnings: EPS of $0.25
+  • Strong Price Momentum: Up 23.7% in past 6 months
+
+Quality Factors:
+  • Good ROE: 10.8%
+  • High Profit Margin: 33.1%
+  • Moderate Debt: D/E ratio of 69.5%
+  • Mid Cap: $3.1B market cap
+
+Risk Profile:
+  • Low Volatility: 14.9% annualized (stable price movement)
+  • Maximum Drawdown: -1.2% (worst peak-to-trough decline)
+
+RISK CONSIDERATIONS:
+----------------------------------------
+  • LOW debt level (D/E = 69.5%) - conservative balance sheet
+  • Sector Risk: Banks and financial institutions are exposed to credit cycles, interest rate changes, and regulatory requirements.
+
+MODEL INSIGHTS:
+----------------------------------------
+  Factor Model: Rank #10 (Score: 61.82/100)
+  ML Model: Rank #44 (Probability: 26.7%)
+
+  Factor Model recommends (ML Model does not):
+    - Strong fundamental metrics drive this recommendation
+    - ML model may see different patterns in historical data
+
+  Key Feature Values (ML Model):
+    - Price_to_SMA50: 1.03
+    - Avg_Volume_3M: 123600.00
+    - ROE: 10.83%
+
+RECOMMENDATION CONFIDENCE:
+----------------------------------------
+   LOW CONFIDENCE
+  Only one model recommends this stock.
+  Consider this a model-specific pick; review factors carefully.
+
+SUITABLE FOR:
+----------------------------------------
+  Balanced investors
+  (Mix of growth and stability characteristics suits moderate risk tolerance)
+
+============================================================
+DISCLAIMER: This is for educational purposes only and does not
+constitute financial advice. Please consult a licensed advisor.
+============================================================

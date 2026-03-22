@@ -9,14 +9,14 @@ WHY RECOMMENDED:
 
 Growth Factors:
   • Positive Revenue Growth: 6.5% YoY
-  • Positive Earnings: EPS of $1.62
+  • Positive Earnings: EPS of $1.63
   • Strong Price Momentum: Up 16.4% in past 6 months
 
 Quality Factors:
   • Good ROE: 12.2%
   • High Profit Margin: 53.2%
-  • Moderate Debt: D/E ratio of 52.7%
-  • Large Cap: $95.8B market cap (established company)
+  • Moderate Debt: D/E ratio of 49.7%
+  • Large Cap: $96.0B market cap (established company)
 
 Risk Profile:
   • Low Volatility: 13.9% annualized (stable price movement)
@@ -24,26 +24,26 @@ Risk Profile:
 
 RISK CONSIDERATIONS:
 ----------------------------------------
-  • LOW debt level (D/E = 52.7%) - conservative balance sheet
+  • LOW debt level (D/E = 49.7%) - conservative balance sheet
   • Sector Risk: Banks and financial institutions are exposed to credit cycles, interest rate changes, and regulatory requirements.
 
 MODEL INSIGHTS:
 ----------------------------------------
-  Factor Model: Rank #4 (Score: 66.56/100)
-  ML Model: Rank #37 (Probability: 35.8%)
+  Factor Model: Rank #4 (Score: 66.68/100)
+  ML Model: Rank #41 (Probability: 29.0%)
 
   Factor Model recommends (ML Model does not):
     - Strong fundamental metrics drive this recommendation
     - ML model may see different patterns in historical data
 
   Key Feature Values (ML Model):
-    - ROE: 12.20%
+    - Price_to_SMA50: 1.03
     - Avg_Volume_3M: 5323851.60
-    - SMA_50: 15.21
+    - ROE: 12.20%
 
 RECOMMENDATION CONFIDENCE:
 ----------------------------------------
-  🟠 LOW CONFIDENCE
+   LOW CONFIDENCE
   Only one model recommends this stock.
   Consider this a model-specific pick; review factors carefully.
 

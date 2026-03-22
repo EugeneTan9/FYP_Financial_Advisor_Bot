@@ -1,8 +1,8 @@
-## AIY.SI (AIY.SI) 🟠 LOW CONFIDENCE
+## AIY.SI (AIY.SI)  LOW CONFIDENCE
 **Sector:** Technology
 **Current Price:** $7.31
 
-### 📈 Why Recommended
+###  Why Recommended
 
 **Growth Factors:**
 - **Strong Revenue Growth:** 45.7% YoY
@@ -15,40 +15,40 @@
 - **Moderate Debt:** D/E of 41.9%
 
 **Risk Profile:**
-- 🟡 **Moderate Volatility:** 25.5% annualized
+-  **Moderate Volatility:** 25.5% annualized
 - **Max Drawdown:** -10.8%
 
-### ⚠️ Risk Considerations
+###  Risk Considerations
 
-- 🟢 **Low debt level** (D/E = 41.9%)
+-  **Low debt level** (D/E = 41.9%)
 - **Sector Risk:** Technology stocks face valuation risks, rapid obsolescence, and increasing regulatory scrutiny.
 
-### 🤖 Model Insights
+###  Model Insights
 
 | Model | Rank | Score |
 |-------|------|-------|
-| Factor Model | #6 | 63.87/100 |
-| ML Model | #16 | 46.5% probability |
+| Factor Model | #7 | 63.85/100 |
+| ML Model | #17 | 48.9% probability |
 
-> 📊 **Factor Model recommends** (ML does not)
+>  **Factor Model recommends** (ML does not)
 > - Strong fundamental metrics drive this recommendation
 
 **Key Feature Values:**
-- `ROE`: 28.02%
+- `Price_to_SMA50`: 99.09%
 - `Avg_Volume_3M`: 586004.76
-- `SMA_50`: 7.38
+- `ROE`: 28.02%
 
-### 🎯 Recommendation Confidence
+###  Recommendation Confidence
 
-**🟠 LOW CONFIDENCE**
+** LOW CONFIDENCE**
 
 Only one model recommends this stock. Consider this a model-specific pick; review factors carefully.
 
-### 👤 Suitable For
+###  Suitable For
 
 **Balanced investors**
 
 *Mix of growth and stability characteristics suits moderate risk tolerance*
 
 ---
-*⚠️ Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*
+* Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*

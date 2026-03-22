@@ -1,47 +1,47 @@
-## U77.SI (U77.SI) 🟠 LOW CONFIDENCE
+## U77.SI (U77.SI)  LOW CONFIDENCE
 **Sector:** Technology
 **Current Price:** $0.22
 
-### 📈 Why Recommended
+###  Why Recommended
 
 **Quality Factors:**
-- **Low Debt:** D/E of 7.4%
+- **Low Debt:** D/E of 7.1%
 
 **Risk Profile:**
-- 🟡 **Moderate Volatility:** 37.1% annualized
+-  **Moderate Volatility:** 37.1% annualized
 - **Max Drawdown:** -27.1%
 
-### ⚠️ Risk Considerations
+###  Risk Considerations
 
-- 🟢 **Low debt level** (D/E = 7.4%)
+-  **Low debt level** (D/E = 7.1%)
 - **Sector Risk:** Technology stocks face valuation risks, rapid obsolescence, and increasing regulatory scrutiny.
 
-### 🤖 Model Insights
+###  Model Insights
 
 | Model | Rank | Score |
 |-------|------|-------|
-| Factor Model | #51 | 37.92/100 |
-| ML Model | #3 | 62.6% probability |
+| Factor Model | #53 | 35.97/100 |
+| ML Model | #5 | 58.8% probability |
 
-> 🧠 **ML Model recommends** (Factor does not)
-> - ML identified patterns in `ROE, Avg_Volume_3M, SMA_50`
+>  **ML Model recommends** (Factor does not)
+> - ML identified patterns in `Price_to_SMA50, Avg_Volume_3M, ROE`
 
 **Key Feature Values:**
-- `ROE`: -0.19%
+- `Price_to_SMA50`: 95.61%
 - `Avg_Volume_3M`: 155336.51
-- `SMA_50`: 23.01%
+- `ROE`: -7.01%
 
-### 🎯 Recommendation Confidence
+###  Recommendation Confidence
 
-**🟠 LOW CONFIDENCE**
+** LOW CONFIDENCE**
 
 Only one model recommends this stock. Consider this a model-specific pick; review factors carefully.
 
-### 👤 Suitable For
+###  Suitable For
 
 **Conservative investors**
 
 *Lower volatility and stable fundamentals suit risk-averse investors*
 
 ---
-*⚠️ Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*
+* Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*

@@ -8,14 +8,14 @@ WHY RECOMMENDED:
 ----------------------------------------
 
 Growth Factors:
-  • Strong Revenue Growth: 14.4% YoY
+  • Strong Revenue Growth: 11.0% YoY
   • Positive Earnings: EPS of $0.10
   • Positive Momentum: Up 13.8% in past 6 months
 
 Quality Factors:
-  • Excellent ROE: 27.1% (strong capital efficiency)
-  • Low Debt: D/E ratio of 18.3% (conservative financing)
-  • Mid Cap: $3.9B market cap
+  • Excellent ROE: 26.4% (strong capital efficiency)
+  • Low Debt: D/E ratio of 29.5% (conservative financing)
+  • Mid Cap: $4.0B market cap
 
 Risk Profile:
   • Low Volatility: 10.3% annualized (stable price movement)
@@ -23,26 +23,26 @@ Risk Profile:
 
 RISK CONSIDERATIONS:
 ----------------------------------------
-  • LOW debt level (D/E = 18.3%) - conservative balance sheet
+  • LOW debt level (D/E = 29.5%) - conservative balance sheet
   • Sector Risk: Consumer staples offer stability but may face margin pressure from inflation and competition.
 
 MODEL INSIGHTS:
 ----------------------------------------
-  Factor Model: Rank #7 (Score: 63.26/100)
-  ML Model: Rank #36 (Probability: 36.1%)
+  Factor Model: Rank #9 (Score: 62.29/100)
+  ML Model: Rank #39 (Probability: 31.2%)
 
   Factor Model recommends (ML Model does not):
     - Strong fundamental metrics drive this recommendation
     - ML model may see different patterns in historical data
 
   Key Feature Values (ML Model):
-    - ROE: 27.09%
+    - Price_to_SMA50: 1.01
     - Avg_Volume_3M: 1810015.87
-    - SMA_50: 1.58
+    - ROE: 26.42%
 
 RECOMMENDATION CONFIDENCE:
 ----------------------------------------
-  🟠 LOW CONFIDENCE
+   LOW CONFIDENCE
   Only one model recommends this stock.
   Consider this a model-specific pick; review factors carefully.
 

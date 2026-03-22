@@ -1,8 +1,8 @@
-## S68.SI (S68.SI) 🟠 LOW CONFIDENCE
+## S68.SI (S68.SI)  LOW CONFIDENCE
 **Sector:** Financial Services
 **Current Price:** $12.17
 
-### 📈 Why Recommended
+###  Why Recommended
 
 **Growth Factors:**
 - **Positive Revenue Growth:** 7.9% YoY
@@ -15,40 +15,40 @@
 - **Low Debt:** D/E of 29.9%
 
 **Risk Profile:**
-- 🟢 **Low Volatility:** 15.6% annualized
+-  **Low Volatility:** 15.6% annualized
 - **Max Drawdown:** -2.3%
 
-### ⚠️ Risk Considerations
+###  Risk Considerations
 
-- 🟢 **Low debt level** (D/E = 29.9%)
+-  **Low debt level** (D/E = 29.9%)
 - **Sector Risk:** Banks and financial institutions are exposed to credit cycles, interest rate changes, and regulatory requirements.
 
-### 🤖 Model Insights
+###  Model Insights
 
 | Model | Rank | Score |
 |-------|------|-------|
-| Factor Model | #2 | 69.93/100 |
-| ML Model | #35 | 37.2% probability |
+| Factor Model | #2 | 69.96/100 |
+| ML Model | #32 | 35.6% probability |
 
-> 📊 **Factor Model recommends** (ML does not)
+>  **Factor Model recommends** (ML does not)
 > - Strong fundamental metrics drive this recommendation
 
 **Key Feature Values:**
-- `ROE`: 30.13%
+- `Price_to_SMA50`: 1.04
 - `Avg_Volume_3M`: 2321552.70
-- `SMA_50`: 11.73
+- `ROE`: 30.13%
 
-### 🎯 Recommendation Confidence
+###  Recommendation Confidence
 
-**🟠 LOW CONFIDENCE**
+** LOW CONFIDENCE**
 
 Only one model recommends this stock. Consider this a model-specific pick; review factors carefully.
 
-### 👤 Suitable For
+###  Suitable For
 
 **Conservative investors**
 
 *Lower volatility and stable fundamentals suit risk-averse investors*
 
 ---
-*⚠️ Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*
+* Disclaimer: This is for educational purposes only and does not constitute financial advice. Please consult a licensed financial advisor before making investment decisions.*
